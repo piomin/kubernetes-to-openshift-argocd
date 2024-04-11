@@ -4,6 +4,8 @@ kind: Kustomization
 resources:
   - ../../base
   - kafka-operator.yaml
+  - cert-manager-operator.yaml
+  - service-mesh-operator.yaml
 
 helmCharts:
   - name: redis
