@@ -13,3 +13,5 @@ server:
     create: false
 global:
   openshift: true
+injector:
+  enabled: false
