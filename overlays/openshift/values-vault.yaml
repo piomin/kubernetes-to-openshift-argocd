@@ -1,0 +1,15 @@
+server:
+  dev:
+    enabled: true
+  route:
+    enabled: true
+    host: ""
+    tls: null
+  image:
+    repository: "registry.connect.redhat.com/hashicorp/vault"
+    tag: "1.16.1-ubi"
+  serviceAccount:
+    name: vault
+    create: false
+global:
+  openshift: true

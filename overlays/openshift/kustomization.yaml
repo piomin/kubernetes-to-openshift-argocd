@@ -18,3 +18,8 @@ helmCharts:
     releaseName: postgresql
     namespace: postgresql
     valuesFile: values-postgres.yaml
+  - name: vault
+    repo: https://helm.releases.hashicorp.com
+    releaseName: vault
+    namespace: vault
+    valuesFile: values-vault.yaml

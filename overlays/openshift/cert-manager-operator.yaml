@@ -22,4 +22,3 @@ metadata:
 spec:
   targetNamespaces:
     - cert-manager
-  upgradeStrategy: Default
