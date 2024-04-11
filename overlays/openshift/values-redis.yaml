@@ -1,0 +1,19 @@
+global:
+  compatibility:
+    openshift:
+      adaptSecurityContext: force
+
+image:
+  tag: 1-16
+  registry: registry.redhat.io
+  repository: rhel9/redis-7
+
+master:
+  persistence:
+    path: /var/lib/redis/data
+
+replica:
+  persistence:
+    path: /var/lib/redis/data
+  containerSecurityContext:
+    readOnlyRootFilesystem: false

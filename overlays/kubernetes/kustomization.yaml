@@ -1,0 +1,38 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base
+  - namespaces.yaml
+
+helmCharts:
+  - name: redis
+    repo: https://charts.bitnami.com/bitnami
+    releaseName: redis
+    namespace: redis
+  - name: postgresql
+    repo: https://charts.bitnami.com/bitnami
+    releaseName: postgresql
+    namespace: postgresql
+  - name: kafka
+    repo: https://charts.bitnami.com/bitnami
+    releaseName: kafka
+    namespace: kafka
+  - name: cert-manager
+    repo: https://charts.jetstack.io
+    releaseName: cert-manager
+    namespace: cert-manager
+    valuesFile: values-cert-manager.yaml
+  - name: vault
+    repo: https://helm.releases.hashicorp.com
+    releaseName: vault
+    namespace: vault
+    valuesFile: values-vault.yaml
+  - name: prometheus
+    repo: https://prometheus-community.github.io/helm-charts
+    releaseName: prometheus
+    namespace: prometheus
+  - name: istio
+    repo: https://prometheus-community.github.io/helm-charts
+    releaseName: istio
+    namespace: istio-system
